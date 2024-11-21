@@ -29,7 +29,7 @@ export default function TopNav() {
         />
         <div className="font-bold text-3xl flex">
           <span className="text-gray-200">
-            MatchMe
+            MatchWe
           </span>
         </div>
       </NavbarBrand>

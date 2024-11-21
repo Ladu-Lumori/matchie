@@ -1,12 +1,10 @@
 import React from "react";
-import Link from "next/link";
+import LoginForm from "./LoginForm";
 
 export default function LoginPage() {
-    return (
-        <div>
-            <h1 className="4xl">
-                Login page
-            </h1>
-            <Link href="/">Go HOME</Link>
-        </div>)
+  return (
+    <div className="flex items-center justify-center vertical-center">
+      <LoginForm />
+    </div>
+  );
 }
