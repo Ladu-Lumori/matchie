@@ -1,8 +1,4 @@
-import {
-    CardHeader,
-    Divider,
-    CardBody,
-} from "@nextui-org/react";
+import CardInnerWrapper from "@/components/CardInnerWrapper";
 import React from "react";
 import EditForm from "./EditForm";
 import { getAuthUserId } from "@/app/actions/authActions";
@@ -13,15 +9,11 @@ export default async function MemberEditPage() {
     const userId = await getAuthUserId();
     const member = await getMemberByUserId(userId);
     if (!member) return notFound();
+
     return (
-        <>
-            <CardHeader className="text-2xl font-semibold text-default">
-                Edit Profile
-            </CardHeader>
-            <Divider />
-            <CardBody>
-                <EditForm member={member} />
-            </CardBody>
-        </>
+        <CardInnerWrapper
+            header="Edit Profile"
+            body={<EditForm member={member} />}
+        />
     );
 }

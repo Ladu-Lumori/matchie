@@ -1,12 +1,27 @@
 import React from "react";
+import MessageSidebar from "./MessageSidebar";
+import { getMessagesByContainer } from "../actions/messageActions";
+import MessageTable from "./MessageTable";
 import Link from "next/link";
 
-export default function MessagesPage() {
+export default async function MessagesPage({
+    searchParams,
+}: {
+    searchParams: { container: string };
+}) {
+
+    const messages = await getMessagesByContainer(searchParams.container);
+
     return (
         <div>
-            <h1 className="4xl">
-                Messages page
-            </h1>
+            <div className="grid grid-cols-12 gap-5 h-[80vh] mt-10">
+                <div className="col-span-2">
+                    <MessageSidebar />
+                </div>
+                <div className="col-span-10">
+                    <MessageTable messages={messages} />
+                </div>
+            </div>
             <Link href="/">Go HOME</Link>
         </div>)
 }
