@@ -1,4 +1,6 @@
-# ALRIGHT!!!
+# Its a  match
+
+A dating site that matches you to your ideal partner. So get out there today and start matching your loved one is just one click away.
 
 ## Tools
 - NextJs
