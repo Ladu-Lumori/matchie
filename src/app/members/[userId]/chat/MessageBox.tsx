@@ -15,16 +15,16 @@ export default function MessageBox({
     message,
     currentUserId,
 }: Props) {
-    const isCurrentUserSender =
-        message.senderId === currentUserId;
-    const messageEndRef =
-        useRef<HTMLDivElement>(null);
+    const isCurrentUserSender = message.senderId === currentUserId;
+    const messageEndRef = useRef<HTMLDivElement>(null);
+
     useEffect(() => {
         if (messageEndRef.current)
             messageEndRef.current.scrollIntoView({
                 behavior: "smooth",
             });
     }, [messageEndRef]);
+
     const renderAvatar = () => (
         <Avatar
             name={message.senderName}
@@ -80,6 +80,7 @@ export default function MessageBox({
             </div>
         );
     };
+
     return (
         <div className="grid grid-rows-1">
             <div
